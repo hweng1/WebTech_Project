@@ -3,22 +3,25 @@
     padding: 0;
     margin: 0;
     color: white;
+    box-sizing: border-box;
 }
-
 #content{
-    padding: 100px;
+    padding: 5%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
 }
-
 #title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     padding: 13%;
-    text-align: center;
-    font-size: 58px;
+    font-size: 4vw;
     color: white;
-    text-shadow: -7px 0 black, 0 7px black, 7px 0 black, 0 -7px black;
-    z-index: 1;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
-
 #ul1 {
     list-style: none;
     margin: 0;
@@ -27,45 +30,39 @@
     background-color: black;
     text-align: center;
 }
-
 #ul1 li {
     display: inline;
     list-style-type: none;
 }
-
-#ul1 li a{
+#ul1 li a {
     display: inline-block;
-    color: black;
+    color: rgb(5, 4, 4);
     text-align: center;
-    font-size: 25px;
+    font-size: 1.8vw;
     font-weight: bolder;
     padding: 10px 20px;
     text-decoration: none;
-    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    text-shadow: -2px 0 rgba(255, 255, 255, 0.877), 0 2px rgba(255, 255, 255, 0.877), 2px 0 rgba(255, 255, 255, 0.877), 0 -2px rgba(255, 255, 255, 0.877);
 }
-
-#nav1{
-    position: absolute;
-    top: 480px;
-    left: 200px;
-}
-
 #ul1 a:hover{
     color: #b3b3b3;
 }
-
-#cc{
+#cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
-    padding: 13%;
-    text-align: center;
-    font-size: 15px;
+    padding: 150px 0px 70px 0px;
+    font-size: 0.8vw;
     color: gray;
-    z-index: 1;
-    position: absolute;
-    right: 0;
-    left: 0;
+    background-color: rgb(23, 20, 20);
 }
-
+#footernav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(23, 20, 20);
+}
 #footerul {
     list-style: none;
     margin: 0;
@@ -73,40 +70,29 @@
     overflow: hidden;
     background-color: black;
     text-align: center;
+    background-color: rgb(23, 20, 20);
 }
-
 #footerul li {
     display: inline;
     list-style-type: none;
 }
-
-#footerul li a i{
+#footerul li a i {
     display: inline-block;
     text-align: center;
-    font-size: 40px;
-    padding: 0px 20px;
+    font-size: 3vw;
+    padding: 0px 20px 50px 20px;
+    background-color: rgb(23, 20, 20);
 }
-
-#ins{
-    font-size: 40px;
-    color: rgb(214, 72, 167);
-}
-
-#mail{
-    color: white;
-}
-
-#github{
-    color: blueviolet;
-}
-
-#footerul a i:hover{
+#footerul a i:hover {
     color: #b3b3b3;
 }
-
-#footernav{
-    z-index: 3;
-    position: absolute;
-    left: 0px;
-    right: 0px;
+#ins {
+    font-size: 3vw;
+    color: rgb(214, 72, 167);
+}
+#mail {
+    color: white;
+}
+#github{
+    color: blueviolet;
 }
