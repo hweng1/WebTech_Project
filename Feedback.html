@@ -25,39 +25,33 @@
             background-image: url(img/feedback.jpg);
             background-size: contain;
         }
-
         #content {
-            text-align: center;
-            font-size: 30px;
+            align-items: center;
+            font-size: 2vw;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
         }
-
         #box {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.893);
+            width: 100%;            
+            color: black;
+            font-weight: bold;
         }
-
-        #cc {
-            top: 800px;
+        #button{
+            margin-left: 45%;
+            font-size: 2vw;
+            background-color: rgba(245, 245, 245, 0.89);
+            color: black;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
         }
-
-        #footernav {
-            top: 1050px;
+        #button:hover{
+            background-color: gray;
         }
     </style>
 </head>
-
 <body>
-    <div id="titledec">
-        <h1 id="title">FEEDBACK</h1>
-    </div>
-    <div id="content">
-        <form action="" method="post">
-            <div>
-                <label>Leave Some Feedback: <br />
-                    <textarea cols="100" name="result" rows="30" readonly id="box"></textarea>
-                </label>
-            </div>
-        </form>
-    </div>
+
     <div id="navigationbar">
         <nav id="nav1">
             <ul id="ul1">
@@ -72,17 +66,36 @@
             </ul>
         </nav>
     </div>
+
+    <div id="titledec">
+        <h1 id="title">FEEDBACK</h1>
+    </div>
+
+    <div>
+        <p id="comments"></p>
+    </div>
+
+    <div id="content">
+        <form action="/" method="post">
+            <div>
+                <label>Leave Some Feedback:</label>
+                <textarea cols="100" name="result" rows="30" id="box" placeholder="Enter the text..."></textarea>
+            </div>
+            <button id="button">submit</button>
+        </form>
+        
+    </div>
+
     <div id="footer">
         <p id="cc">2022 created by Corinna Han Weng but content mostly copied and pasted</p>
         <nav id="footernav">
             <ul id="footerul">
                 <li><a href="https://github.com/hweng1"><i class="fa-brands fa-github" id="github"></i></a></li>
                 <li><a href="mailto:hweng1@babson.edu"><i class="fa-solid fa-envelope" id="mail"></i></a></li>
-                <li><a href="https://www.instagram.com/coricori_weng/"><i class="fa-brands fa-instagram"
-                            id="ins"></i></a></li>
+                <li><a href="https://www.instagram.com/coricori_weng/"><i class="fa-brands fa-instagram" id="ins"></i></a></li>
             </ul>
         </nav>
     </div>
-</body>
 
+</body>
 </html>
