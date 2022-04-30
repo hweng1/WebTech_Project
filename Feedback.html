@@ -81,7 +81,7 @@
                 <li><a href="page2.html">ISTP</a></li>
                 <li><a href="page3.html">ENTP</a></li>
                 <li><a href="page4.html">MEMES</a></li>
-                <li><a href="page5.html">COMMENTS</a></li>
+                <li><a href="page5.html">WORDS</a></li>
                 <li><a href="Feedback.html">FEEDBACK</a></li>
             </ul>
         </nav>
@@ -159,17 +159,17 @@
             const form = document.querySelector("form");
             const name = form.name.value;
             const age = form.age.value;
-            if(name == "" || age == ""){
+            const email = form.email.value
+            if(name == "" || age == "" || email == ""){
                 alert("you did not enter completely");
-            }else if(isNaN(age) || parseInt(age) || parseInt(age) > 90){
-                alert("you did not enter age correctly")
+            }else if(isNaN(age) || parseInt(age) <= 3 || parseInt(age) > 90){
+                alert("you did not enter age correctly");
             }
         }
 
-        const button = document.getElementById("submit");
-        button.addEventListener("onmousedown", function(){
+        document.getElementById("submit").onclick = function(){
             validate();
-        })
+        }
     </script>
 
 </body>
