@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comments</title>
+    <title>Words</title>
     <link rel="stylesheet" href="style/background.css" />
     <script src="https://kit.fontawesome.com/0615131f4f.js" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
@@ -24,28 +24,49 @@
             background-image: url(img/comment.png);
             background-size: contain;
         }
-        #content {
+        #app{
+            display: flex; 
+            flex-flow: column;
+            justify-content: center;
             align-items: center;
-            font-size: 2vw;
-            font-weight: bold;
-            font-family: 'Courier New', Courier, monospace;
+            padding: 3%;
         }
-        #box {
-            background-color: rgba(255, 255, 255, 0.893);
+        .lists{
+            display: flex;
             width: 100%;
-            color: black;
-            font-weight: bold;
+            justify-content: center;
+            align-items: center;
         }
-        #button{
-            margin-left: 45%;
-            font-size: 2vw;
-            background-color: rgba(245, 245, 245, 0.89);
-            color: black;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
+        .lists .list{
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            min-width: 250px;
+            max-width: 350px;
+            height: 60%;
+            min-height: 150px;
+            background-color:beige;
+            margin: 0 15px;
+            padding: 10px;
         }
-        #button:hover{
-            background-color: gray;
+        .lists .list .listitem{
+            background-color: black;
+            border-radius: 8px;
+            padding: 15px 20px;
+            text-align: center;
+            margin: 4px 0px;
+        }
+        .listheading{
+            list-style: none;
+            overflow: hidden;
+        }
+        .listheading li{
+            display: inline-block;
+            text-align: center;
+            padding: 30px 130px;
+            text-decoration: none;
+            font-size: 1vw;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -67,21 +88,31 @@
     </div>
 
     <div id="titledec">
-        <h1 id="title">COMMENTS</h1>
+        <h1 id="title">Words</h1>
     </div>
 
-    <div>
-        <p id="comments"></p>
-    </div>
-
-    <div id="content">
-        <form action="/" method="post">
-            <div>
-                <label>Leave Your Thought About ISTP & ENTP:</label>
-                <textarea cols="100" name="result" rows="30" id="box" placeholder="Enter the text..."></textarea>
+    <div id="app">
+        <nav>
+            <ul class="listheading">
+                <li>Vocabs</li>
+                <li>E</li>
+                <li>I</li>
+                <li>S</li>
+                <li>N</li>
+            </ul>
+        </nav>
+        <div class="lists">
+            <div class="list">
+                <div class="listitem" draggable="true">Extraversion</div>
+                <div class="listitem" draggable="true">Introversion</div>
+                <div class="listitem" draggable="true">Sensing</div>
+                <div class="listitem" draggable="true">Intuition</div>
             </div>
-        <button id="button">submit</button> 
-        </form>
+            <div class="list"></div>
+            <div class="list"></div>
+            <div class="list"></div>
+            <div class="list"></div>
+        </div>
     </div>
 
     <div id="footer">
@@ -96,16 +127,40 @@
     </div>
 
     <script>
-        function leave_comment{
-            console.log("starting");
-            let userinput = document.getElementById("box").value;
-            console.log(userinput);
-        }
-
-        document.getElementById("button").onclick = function(){
-            leave_comment();
+        const list_items = document.querySelectorAll(".listitem")
+        const lists = document.querySelectorAll(".list");
+        let draggeditem = null;
+        for(let i = 0; i < list_items.length; i++){
+            const item = list_items[i];
+            item.addEventListener("dragstart", function(){
+                console.log ("dragstart")
+                draggedItem = item;
+                setTimeout(function(){
+                    item.style.display = "none";
+                }, 0)
+            });
+            item.addEventListener("dragend", function(){
+                console.log("dragend")
+                setTimeout(function(){
+                    draggedItem.style.display = "block";
+                    draggedItem = null; 
+                }, 0);
+                
+            })
+            for (let j = 0; j < lists.length; j++){
+                const list = lists[j];
+                list.addEventListener("dragover", function(e){ 
+                    e.preventDefault();
+                })
+                list.addEventListener("dragenter", function(e){
+                    e.preventDefault();
+                })
+                list.addEventListener("drop", function(e){
+                    console.log("drop")
+                    this.append(draggedItem);                
+                })
+            }
         }
     </script>
-
 </body>
 </html>

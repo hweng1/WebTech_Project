@@ -32,21 +32,41 @@
             font-family: 'Courier New', Courier, monospace;
         }
         #box {
-            background-color: rgba(255, 255, 255, 0.893);
-            width: 100%;            
+            background-color: rgba(255, 255, 255, 0.893);           
             color: black;
             font-weight: bold;
         }
-        #button{
-            margin-left: 45%;
-            font-size: 2vw;
-            background-color: rgba(245, 245, 245, 0.89);
+        #submit #reset{
+            background-color: rgba(255, 255, 255, 0.847);
             color: black;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
         }
-        #button:hover{
+        #name{
+            background-color: white;
+            color: black;
+        }
+        #age{
+            background-color: white;
+            color: black;
+        }
+        #mbti{
+            background-color: white;
+            color: black;
+        }
+        #email{
+            background-color: white;
+            color: black;
+        }
+        #submit{
             background-color: gray;
+            color: black;
+            font-size: 1vw;
+            padding: 1%;
+        }
+        #reset{
+            background-color: gray;
+            color: black;
+            font-size: 1vw;
+            padding: 1%;
         }
     </style>
 </head>
@@ -76,14 +96,50 @@
     </div>
 
     <div id="content">
-        <form action="/" method="post">
+        <form action="" method="">
             <div>
-                <label>Leave Some Feedback:</label>
-                <textarea cols="100" name="result" rows="30" id="box" placeholder="Enter the text..."></textarea>
+                <label>Name:<input type="text" name="name" id="name" /></label>
             </div>
-            <button id="button">submit</button>
+            <div>
+                <label>Age:<input type="text" name="age" id="age" /></label>
+            </div>
+            <div>
+                <label>Your MBTI is:
+                    <select name="mbti" id="mbti">
+                        <option value="">select</option>
+                        <option value="ISTJ">ISTJ</option>
+                        <option value="ISFJ">ISFJ</option>
+                        <option value="INFJ">INFJ</option>
+                        <option value="INTJ">INTJ</option>
+                        <option value="ISTP">ISTP</option>
+                        <option value="ISFP">ISFP</option>
+                        <option value="INFP">INFP</option>
+                        <option value="INTP">INTP</option>
+                        <option value="ESTP">ESTP</option>
+                        <option value="ESFP">ESFP</option>
+                        <option value="ENFP">ENFP</option>
+                        <option value="ENTP">ENTP</option>
+                        <option value="ESTJ">ESTJ</option>
+                        <option value="ESFJ">ESFJ</option>
+                        <option value="ENFJ">ENFJ</option>
+                        <option value="ENTJ">ENTJ</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>Email:<input type="email" name="email" id="email" maxlength="100" required/></label>
+            </div>
+            <div>
+                <div>
+                    <label>Leave Some Feedback:</label>
+                </div>
+                <textarea cols="25" name="result" rows="10" id="box" placeholder="Enter the text..."></textarea>
+            </div>
+            <div>
+            <input type="button" name="submit" value="submit" id="submit" />
+            <input type="reset" name="reset" value="reset" id="reset" />
+            </div>
         </form>
-        
     </div>
 
     <div id="footer">
@@ -96,6 +152,25 @@
             </ul>
         </nav>
     </div>
+
+    <script>
+        function validate(){
+            console.log("starting")
+            const form = document.querySelector("form");
+            const name = form.name.value;
+            const age = form.age.value;
+            if(name == "" || age == ""){
+                alert("you did not enter completely");
+            }else if(isNaN(age) || parseInt(age) || parseInt(age) > 90){
+                alert("you did not enter age correctly")
+            }
+        }
+
+        const button = document.getElementById("submit");
+        button.addEventListener("onmousedown", function(){
+            validate();
+        })
+    </script>
 
 </body>
 </html>
