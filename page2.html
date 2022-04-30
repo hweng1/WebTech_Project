@@ -65,6 +65,33 @@
         align-items: center;
         padding: 4%;
     }
+    #arrowimg{
+            width: 100%;
+    }
+    #arrow:hover{
+        background-color: rgb(32, 32, 32);
+    }
+    #arrow{
+        padding: 1% 45%;
+        display: flex;
+    }
+    #hidden{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-start;
+        display: none;
+    }
+    #upimg{
+        width: 100%;
+    }
+    #uparrow{
+        padding: 1% 45%;
+        display: flex;
+    }
+    #uparrow:hover{
+        background-color: rgb(32, 32, 32);
+    }
 </style>
 
 <body>
@@ -136,6 +163,13 @@
             a cool head, maintaining their objectivity, and coping with crisis.
         </p>
         <br>
+
+        <p id="arrow">
+            click for more:
+            <img src="img/arrow.jpg" alt="arrow" name="arrow" id="arrowimg">
+        </p>  
+
+        <div id="hidden">
         <h3>Cognitive Functions</h3>
         <br>
         <p>
@@ -203,6 +237,13 @@
             difficult to get to know. They often find friends who enjoy similar hobbies as they do and enjoy spending
             time with these friends as they pursue these activities.
         </p>
+
+        <p id="uparrow">
+            hide text:
+            <img src="img/up.png" alt="arrow" name="arrow" id="upimg">
+        </p> 
+
+        </div>
     </div>
 
     <div id="button">
@@ -234,5 +275,20 @@
             </ul>
         </nav>
     </div>
+
+    <script>
+        const hiddentext = document.getElementById("hidden");
+        const showtext = document.getElementById("arrow")
+        const hidetext = document.getElementById("uparrow")
+        showtext.addEventListener("click", function(){
+            hiddentext.style.display = "flex";
+            showtext.style.display = "none";
+        })
+        hidetext.addEventListener("click", function(){
+            hiddentext.style.display = "none";
+            showtext.style.display = "flex";
+        })
+    </script>
+    
 </body>
 </html>

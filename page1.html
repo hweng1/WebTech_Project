@@ -48,6 +48,33 @@
             height: auto;
             margin-bottom: 5%;
         }
+        #arrowimg{
+            width: 100%;
+        }
+        #arrow:hover{
+            background-color: rgb(32, 32, 32);
+        }
+        #arrow{
+            padding: 1% 45%;
+            display: flex;
+        }
+        #hidden{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-start;
+            display: none;
+        }
+        #upimg{
+            width: 100%;
+        }
+        #uparrow{
+            padding: 1% 45%;
+            display: flex;
+        }
+        #uparrow:hover{
+            background-color: rgb(32, 32, 32);
+        }
     </style>
 </head>
 <body>
@@ -96,6 +123,13 @@
             among the preferences."
         </p>
         <br>
+
+        <p id="arrow">
+            click for more:
+            <img src="img/arrow.jpg" alt="arrow" name="arrow" id="arrowimg">
+        </p>  
+
+        <div id="hidden">
         <p>
             Favorite world: Do you prefer to focus on the outer world or on your own inner world? This is called
             Extraversion (E) or Introversion (I).
@@ -145,6 +179,13 @@
             ongoing, providing users with updated and new information about psychological type and its applications.
             Millions of people worldwide have taken the Indicator each year since its first publication in 1962.
         </p>
+
+        <p id="uparrow">
+            hide text:
+            <img src="img/up.png" alt="arrow" name="arrow" id="upimg">
+        </p> 
+
+        </div>
     </div>
 
     <div id="Videocontent">
@@ -167,5 +208,20 @@
             </ul>
         </nav>
     </div>
+
+    <script>
+        const hiddentext = document.getElementById("hidden");
+        const showtext = document.getElementById("arrow")
+        const hidetext = document.getElementById("uparrow")
+        showtext.addEventListener("click", function(){
+            hiddentext.style.display = "flex";
+            showtext.style.display = "none";
+        })
+        hidetext.addEventListener("click", function(){
+            hiddentext.style.display = "none";
+            showtext.style.display = "flex";
+        })
+    </script>
+
 </body>
 </html>
